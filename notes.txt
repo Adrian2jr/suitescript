@@ -93,3 +93,91 @@ Customization > Lists, Records & Fields > Entity Fields > New
 
 Fill the necessary information and save the record.
 -----------------------------------------------------------------------------------------------------------------------------------
+
+Theme: Modules
+
+This is useful when you need to use a function from another file, or import, create or transform 
+data from another record, file etc, or use a library from netsuite like HTTP.
+
+/**
+ *@NApiVersion 2.x
+ *@NScriptType ScheduledScript
+ */
+define(['N/record'], ---> this is a module on the []
+function(record) { ---> here i can use the module record 
+
+    function execute(context) {
+        
+    }
+
+    return {
+        execute: execute
+    }
+});
+
+Here on the url you can find the differnt type of modules you can use on netsuite: (2.0)
+https://tstdrv1681055.app.netsuite.com/app/help/helpcenter.nl?fid=chapter_4220488571.html 
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Theme: Scripting sublists
+
+- getSublistField(options) : returns a field object for the specified sublist field.
+- getSublistValue(options) : get sublist field value or id.
+- setSublistValue(options) : set sublist field value.
+- getSublistText(options) : returns the text of a sublist field (list/record fields only).
+- setSublistText(options) : sets the text of a sublist field. (list/record fields only).
+
+Examples: 
+var description = objRecord.getSublistValue({
+    sublistId: itemSublist,
+    fieldId: 'description', //field ID - netsuite
+    line: x //values
+});
+
+var vendor = objRecord.getSublistText({
+    sublistId: itemSublist,
+    fieldId: 'custcol_lgc_vendor_name',
+    line: x
+});
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Theme: Saved search
+
+- search.create(options) : creates a new search object.
+- search.run() : executes the search and returns the result set.
+- search.lookupFields(options) : returns the values of a field from a record.
+- search.lookupFields.promise(options) : returns the values of a field from a record as a promise.
+- search.lookupFields.promise(options).then() : returns the values of a field from a record as a promise and executes a function when the promise is resolved.
+
+Examples:
+
+Query - NetSuite search terminology.
+
+select po.po_date        --> search columns
+       po.po_number      
+       po.po_status      
+       po.po_amount      
+       v.credit limit    
+  from purchaseorder po  
+    vendor v
+  where po.vendor = v.id --> search filters
+    and po.po_status = 'Pending Receipt'
+    and po.vendor_id = v.vendor_id --> search join
+
+To create saved search on NetSuite:
+
+1.- Reports > Saved Searches > All Saved Searches > New
+2.- select the record type you want to search. (example: Case)
+3.- Fill the necessary information and save the record:
+
+- Title 
+- ID
+- Criteria subtab (Fields to select from the record, you can do the joins here)
+- Results subtab (Fields to display on the results) -show when you save the search-
+- Available Filters subtab (Filters to apply on the search) -optional-
+
+Example of creation script for saved search on the file: l1_ss_escalated_cases.js //need scheduled script
+
+-----------------------------------------------------------------------------------------------------------------------------------
