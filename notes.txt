@@ -1,0 +1,95 @@
+SuiteCloud platform tools: 
+
+- SuiteBuilder
+- SuiteFlow
+- SuiteAnalytics
+- SuiteBundler
+- SuiteTalk
+- SuiteScript
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+SuiteScript script types: 
+
+- Client / for automating actions while the user is modifyng form values.
+
+- User event / automations are triggered on the server, (user event scripts are triggered by the user's actions on the client side)
+
+- Workflow action
+
+- Scheduled / for automating actions on a schedule (e.g. daily, weekly, monthly) like generating reports, sending emails, etc.
+
+- Map/reduce / for processing large amounts of data.
+
+- Suitelet / create custom user interfaces for your script. 
+
+- RESTlet / Create custom user interfaces for your script. (RESTlets are used to create custom integrations with third-party systems)
+
+- Portlet / custom portlets are used to display custom data on dashboards. for example a list of customers with their balances.
+
+- Mass update / for updating multiple records at once.
+
+- Bundle installation / for customizing the installation process of a bundle. Adding actions before and/or after installing a bundle
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+To upload suitescript file on NetSuite, navigate to: (CREATE, UPLOAD, TEST)
+
+- Documents > Files > SuiteScripts (you can create a folder or upload the file directly)
+
+To deploy the file go to: 
+
+- Customization > Scripting > Scripts > New
+select the script and click: create script record.
+
+on the creation you are going to fill: 
+- Name
+- ID
+- Description
+
+go to deployment tab and change:
+
+- Applies to: Select the record type you want to apply the script to.
+- ID: copy the same ID you used on the script record.
+- Deployed: select the checkbox to deploy the script.
+- the status to:
+Testing: to test the script. (only the owner of the script can test it)
+Released: to deploy the script. (all users can use the script)
+- Event type: select the event type you want to trigger the script on. (or blank to trigger the script on all events)
+- Log level: select the log level you want to use. (debug, audit, error, emergency)
+
+For example, if you select the record for employee, navigate to: 
+Lists > Employees > Employees and open on a new tab.
+
+Click on edit, and save the record. (for user event this trigger the script)
+
+and if you want to see the log.debug on your script, navigate to your script and enter to the execution log.
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Theme: Log Levels and the order of execution
+
+4 debug(title, details) : Used to log information that is useful for debugging scripts.
+3 audit(title, details)
+2 error(title, details) : Used to log information about errors that occur when a script is running.
+1 emergency(title, details) 
+
+-----------------------------------------------------------------------------------------------------------------------------------
+Theme: Objects 
+
+- context: provides information about the current user and the current record.
+
+context.newRecord : Get record object reference.
+getField(options) : returns a field object for the specified field.
+getValue(fieldName) : get field value or id.
+setValue(fieldName, value) : set field value.
+getText(fieldName) : returns the text of a field (list/record fields only).
+setText(fieldName, text) : sets the text of a field. (list/record fields only).
+
+Goal: scripting a custom entity field
+
+To create a custom entity field on this example for employee, navigate to:
+
+Customization > Lists, Records & Fields > Entity Fields > New
+
+Fill the necessary information and save the record.
+-----------------------------------------------------------------------------------------------------------------------------------
