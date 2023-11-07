@@ -1,11 +1,11 @@
 SuiteCloud platform tools: 
 
-- SuiteBuilder
-- SuiteFlow
-- SuiteAnalytics
-- SuiteBundler
-- SuiteTalk
-- SuiteScript
+- SuiteBuilder //for customizing the NetSuite application.
+- SuiteFlow //for creating custom workflows.
+- SuiteAnalytics //for creating custom reports and searches.
+- SuiteBundler //for creating custom bundles.
+- SuiteTalk //for integrating NetSuite with third-party systems.
+- SuiteScript //for creating custom scripts.
 
 -----------------------------------------------------------------------------------------------------------------------------------
 
