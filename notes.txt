@@ -181,3 +181,47 @@ To create saved search on NetSuite:
 Example of creation script for saved search on the file: l1_ss_escalated_cases.js //need scheduled script
 
 -----------------------------------------------------------------------------------------------------------------------------------
+Theme: workflows action scripts
+-----------------------------------------------------------------------------------------------------------------------------------
+Theme: custom pages - suitlets 
+
+example of code: 
+
+const form = serverWidget.createForm({ title: 'My Form' });
+
+form.addField({
+    id: 'custpage_my_field',
+    type: serverWidget.FieldType.TEXT,
+    label: 'My Field'
+});
+
+form.addSubmitButton({
+    label: 'Submit Button'
+});
+
+context.response.writePage(form);
+
+You can add a relative path for a suitlet on the netsuite view, going to:
+
+script > deployment > links 
+
+and set the link you want for the navigate.
+-----------------------------------------------------------------------------------------------------------------------------------
+SuiteTalk vs RESTlets
+
+SuiteTalk:
+- Authentication
+- SOAP
+- XML 
+- POST 
+- defined contract
+
+RESTlets: 
+- Authentication
+- REST
+- JSON
+- GET, POST, PUT, DELETE
+- free-form operations
+
+Suitelet: 
+- Public

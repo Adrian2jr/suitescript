@@ -2,7 +2,7 @@
  *@NApiVersion 2.x
  *@NScriptType ClientScript
  */
-define([], function() {
+define(['N/https', "N/url"], function(https, url) {
     //cuando un campo cambia.
     function fieldChanged(context) {
         const employee = context.currentRecord;
@@ -18,19 +18,30 @@ define([], function() {
     }
 
     //si usamos esto, el usuario no se podra mover hasta que la validacion de true.
-    // function validateField(context) { 
-    //     const employee = context.currentRecord;
+    function validateField(context) { 
+        const employee = context.currentRecord;
 
-    //     if(context.fieldId == "custentity_l1_employee_course") { 
-    //         const empCourse = employee.getValue("custentity_l1_employee_course");
+        if(context.fieldId == "custentity_l1_employee_course") { 
+            const empCourse = employee.getValue("custentity_l1_employee_course");
 
-    //         if(empCourse == 'x') { 
-    //             alert("Invalid Employee course value. Please try again.");
-    //             return false;
-    //         }
-    //     }
-    //     return true;
-    // }
+            //Access to RESTlet
+            // const response  = https.get({
+            //     url: "", // URL of the RESTlet
+                
+            // })
+
+            // if(response.body == 'invalid') {
+            //     alert("Invalid Employee course value. Please try again.");
+            //     return false;
+            // }
+
+            if(empCourse == 'x') { 
+                alert("Invalid Employee course value. Please try again.");
+                return false;
+            }
+        }
+        return true;
+    }
 
     //cuando le pico "Save".
     function saveRecord(context) { 
