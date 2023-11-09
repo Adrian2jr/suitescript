@@ -74,7 +74,7 @@ Theme: Log Levels and the order of execution
 1 emergency(title, details) 
 
 -----------------------------------------------------------------------------------------------------------------------------------
-Theme: Objects 
+Theme: Objects and entity fields
 
 - context: provides information about the current user and the current record.
 
@@ -182,6 +182,21 @@ Example of creation script for saved search on the file: l1_ss_escalated_cases.j
 
 -----------------------------------------------------------------------------------------------------------------------------------
 Theme: workflows action scripts
+
+SuiteFlow vs SuiteScript
+
+SuiteFlow: Automates Business Processes
+SuiteScript: Extends the capabilities of NetSuite through coding.
+
+
+SuiteFlow Elements: 
+- Image on the word document on this project.
+
+Path to create workflow:
+Customization => scripting => workflows => New
+
+how to create workflow on the document (course flows.docx)
+
 -----------------------------------------------------------------------------------------------------------------------------------
 Theme: custom pages - suitlets 
 
