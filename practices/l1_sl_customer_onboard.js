@@ -92,6 +92,33 @@ define(['N/email', 'N/record', 'N/redirect', 'N/ui/serverWidget'], function(emai
             label: 'Save'
         });
 
+        //Custom properties for the fields
+        nameField.updateDisplayType({
+            displayType: serverWidget.FieldDisplayType.DISABLED //This block the field
+        });
+
+        salesRepFld.updateDisplayType({
+            displayType: serverWidget.FieldDisplayType.INLINE //This hide the field
+        });
+
+        phoneFld.updateDisplayType({
+            displayType: serverWidget.FieldDisplayType.INLINE
+        });
+
+        emBodyFld.updateDisplaySize({
+            height: 20,
+            width: 85
+        });
+
+        noteFld.updateLayoutType({
+            layoutType: serverWidget.FieldLayoutType.OUTSIDEABOVE
+        });
+
+        tskTitleFld.isMandatory = true;
+        tskNotesFld.isMandatory = true;
+        emSubjectFld.isMandatory = true;
+        emBodyFld.isMandatory = true;
+        
         response.writePage(form);
     }
 
