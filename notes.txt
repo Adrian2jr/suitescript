@@ -1,4 +1,4 @@
-SuiteCloud platform tools: 
+Theme: SuiteCloud platform tools: 
 
 - SuiteBuilder //for customizing the NetSuite application.
 - SuiteFlow //for creating custom workflows.
@@ -9,7 +9,7 @@ SuiteCloud platform tools:
 
 -----------------------------------------------------------------------------------------------------------------------------------
 
-SuiteScript script types: 
+Theme: SuiteScript script types: 
 
 - Client / for automating actions while the user is modifyng form values.
 
@@ -33,7 +33,7 @@ SuiteScript script types:
 
 -----------------------------------------------------------------------------------------------------------------------------------
 
-To upload suitescript file on NetSuite, navigate to: (CREATE, UPLOAD, TEST)
+Theme: upload suitescript file on NetSuite, navigate to: (CREATE, UPLOAD, TEST)
 
 - Documents > Files > SuiteScripts (you can create a folder or upload the file directly)
 
@@ -222,7 +222,7 @@ script > deployment > links
 
 and set the link you want for the navigate.
 -----------------------------------------------------------------------------------------------------------------------------------
-SuiteTalk vs RESTlets
+Theme: SuiteTalk vs RESTlets
 
 SuiteTalk:
 - Authentication
@@ -241,4 +241,20 @@ RESTlets:
 Suitelet: 
 - Public
 -----------------------------------------------------------------------------------------------------------------------------------
+Theme: SuiteQL and queryAPI
 
+-----------------------------------------------------------------------------------------------------------------------------------
+Theme: Custom User Interface
+
+NetSuite UI:
+
+- Suitelet: form, list, assistant, html
+- User event: form
+- Portlet: form, list, links, html
+
+
+Theme: Standard SuiteScript UI design (course flows.docx)
+
+Script used: l1_sl_customer_onboard.js
+
+-----------------------------------------------------------------------------------------------------------------------------------
